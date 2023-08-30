@@ -5331,7 +5331,7 @@ class Dataset(DatasetInfoMixin, IndexableMixin, TensorflowDatasetMixin):
         ]
         download_config = DownloadConfig(token=token)
         deleted_size = sum(
-            xgetsize(hf_hub_url(repo_id, data_file), download_config=download_config)
+            xgetsize(hf_hub_url(repo_id, data_file, revision = branch), download_config=download_config)
             for data_file in data_files_to_delete
         )
 
